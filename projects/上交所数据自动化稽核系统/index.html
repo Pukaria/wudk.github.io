@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>上交所数据自动化稽核系统 - My Docs</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Welcome to MkDocs</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Projects</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">上交所数据自动化稽核系统</a>
+</li>
+                                    
+<li>
+    <a href="../%E5%AE%8F%E8%A7%82%E6%95%B0%E6%8D%AE%E6%AF%94%E5%AF%B9%E5%B7%A5%E5%85%B7/" class="dropdown-item">宏观数据自动比对工具</a>
+</li>
+                                    
+<li>
+    <a href="../%E5%AE%8F%E8%A7%82%E6%95%B0%E6%8D%AE%E6%AF%94%E5%AF%B9%E7%BB%93%E6%9E%9C%E6%99%BA%E8%83%BD%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/" class="dropdown-item">宏观数据比对结果智能预处理工具</a>
+</li>
+                                    
+<li>
+    <a href="../%E6%8C%87%E6%A0%87%E4%BB%A3%E7%A0%81%E5%BD%92%E9%9B%86%E4%B8%8E%E4%BA%A4%E5%8F%89%E6%A0%B8%E6%9F%A5%E5%B7%A5%E5%85%B7/" class="dropdown-item">指标代码归集与交叉核查工具</a>
+</li>
+                                    
+<li>
+    <a href="../%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7%E6%A0%B8%E6%9F%A5%E4%B8%8E%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8%E5%B7%A5%E5%85%B7/" class="dropdown-item">数据完整性核查与自动补全工具</a>
+</li>
+                                    
+<li>
+    <a href="../%E6%B7%B1%E4%BA%A4%E6%89%80%E6%95%B0%E6%8D%AE%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A8%BD%E6%A0%B8%E7%B3%BB%E7%BB%9F/" class="dropdown-item">深交所数据自动化稽核系统</a>
+</li>
+                                    
+<li>
+    <a href="../%E7%8C%AA%E9%B8%A1%E8%9B%8B%E6%96%99%E6%AF%94%E4%BB%B7%E5%91%A8%E6%8A%A5%E6%97%B6%E6%95%88%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/" class="dropdown-item">猪鸡蛋料比价周报时效监控系统</a>
+</li>
+                                    
+<li>
+    <a href="../%E7%94%9F%E7%8C%AA%E5%8F%8A%E7%8C%AA%E8%82%89%E4%BB%B7%E6%A0%BC%E5%91%A8%E6%8A%A5%E6%97%B6%E6%95%88%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/" class="dropdown-item">生猪及猪肉价格周报时效监控系统</a>
+</li>
+                                    
+<li>
+    <a href="../%E7%95%9C%E4%BA%A7%E5%93%81%E5%91%A8%E6%8A%A5%E6%97%B6%E6%95%88%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/" class="dropdown-item">畜产品周报时效监控系统</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../.." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../%E5%AE%8F%E8%A7%82%E6%95%B0%E6%8D%AE%E6%AF%94%E5%AF%B9%E5%B7%A5%E5%85%B7/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">上交所数据自动化稽核系统</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">📌 项目背景</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">🛠️ 技术栈</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">🧠 系统整体架构</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#8" class="nav-link">📥 阶段一：数据抓取（8 个数据源）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_6" class="nav-link">🔄 阶段二：模板映射（含派生指标计算）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_9" class="nav-link">📊 阶段三：数据库比对</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_13" class="nav-link">📱 阶段四：钉钉智能通知</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_16" class="nav-link">📈 成果与价值</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_19" class="nav-link">🔗 关联工具</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_20" class="nav-link">📂 相关资源</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="_1">上交所数据自动化稽核系统</h1>
+<h2 id="_2">📌 项目背景</h2>
+<p>在日常金融数据运营中，需要定期从上海证券交易所官网抓取市场数据，与内部数据库进行比对，以验证数据的一致性和完整性。这项工作涉及<strong>指数行情、融资融券、股票成交、基金成交、债券市场</strong>等多个数据源，手动操作耗时 2-3 小时，且容易因网页改版或数据格式变化导致失败。</p>
+<p>本系统实现了一个<strong>全自动化的数据稽核流水线</strong>，从数据抓取到最终比对报告生成，全程无人值守，并支持<strong>钉钉机器人实时通知</strong>，将每日稽核时间从 2-3 小时缩短至 <strong>5 分钟以内</strong>。</p>
+<h2 id="_3">🛠️ 技术栈</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">类别</th>
+<th style="text-align: left;">工具/技术</th>
+<th style="text-align: left;">用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>核心语言</strong></td>
+<td style="text-align: left;">Python 3.x</td>
+<td style="text-align: left;">主开发语言</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>数据抓取</strong></td>
+<td style="text-align: left;">Selenium + Edge WebDriver</td>
+<td style="text-align: left;">动态页面渲染与交互式数据抓取</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>HTTP 请求</strong></td>
+<td style="text-align: left;">Requests</td>
+<td style="text-align: left;">REST API 数据获取（含 JSONP 解析）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>数据处理</strong></td>
+<td style="text-align: left;">Pandas, OpenPyXL</td>
+<td style="text-align: left;">Excel 读写、数据清洗与转换</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>数据库</strong></td>
+<td style="text-align: left;">PyODBC + SQL Server</td>
+<td style="text-align: left;">生产环境数据查询（CTE + 窗口函数）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>通知系统</strong></td>
+<td style="text-align: left;">钉钉机器人 Webhook（加签模式）</td>
+<td style="text-align: left;">执行结果实时推送与异常告警</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>日期处理</strong></td>
+<td style="text-align: left;">chinese_calendar</td>
+<td style="text-align: left;">交易日判断（剔除周末/节假日）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>部署</strong></td>
+<td style="text-align: left;">PyInstaller</td>
+<td style="text-align: left;">打包为独立 .exe 可执行文件</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_4">🧠 系统整体架构</h2>
+<p>本系统采用 <strong>“四阶段流水线”</strong> 架构，每个阶段独立可追溯：</p>
+<pre><code class="language-mermaid">flowchart LR
+    A[阶段一：数据抓取] --&gt; B[阶段二：模板映射]
+    B --&gt; C[阶段三：数据库比对]
+    C --&gt; D[阶段四：钉钉通知]
+
+    subgraph A [阶段一：数据抓取]
+        A1[指数行情&lt;br&gt;Selenium/HTTP] --&gt; A2[融资融券&lt;br&gt;Selenium]
+        A2 --&gt; A3[股票成交概况&lt;br&gt;Selenium]
+        A3 --&gt; A4[基金成交概况&lt;br&gt;Selenium]
+        A4 --&gt; A5[债券市场&lt;br&gt;JSONP API]
+        A5 --&gt; A6[原始数据汇总&lt;br&gt;Excel]
+    end
+
+    subgraph B [阶段二：模板映射]
+        B1[读取模板文件] --&gt; B2[手动映射表]
+        B2 --&gt; B3[派生指标计算]
+        B3 --&gt; B4[映射结果 Excel]
+    end
+
+    subgraph C [阶段三：数据库比对]
+        C1[连接 SQL Server] --&gt; C2[CTE 查询最新数据]
+        C2 --&gt; C3[逐指标比对]
+        C3 --&gt; C4[差异报告 Excel]
+    end
+
+    subgraph D [阶段四：钉钉通知]
+        D1{存在异常?} --&gt;|是| D2[@相关人员&lt;br&gt;发送问题报告]
+        D1 --&gt;|否| D3[发送成功通知]
+    end
+</code></pre>
+<h2 id="8">📥 阶段一：数据抓取（8 个数据源）</h2>
+<p>系统自动从以下 8 个数据源并行/串行抓取数据：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">序号</th>
+<th style="text-align: left;">数据源</th>
+<th style="text-align: left;">抓取方式</th>
+<th style="text-align: left;">关键数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">上交所实时行情接口</td>
+<td style="text-align: left;">HTTP GET + JSON 解析</td>
+<td style="text-align: left;">主要指数（上证综指、上证50、科创50等）的收盘价、涨跌幅、成交额</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">中证指数有限公司</td>
+<td style="text-align: left;">HTTP GET + JSON 解析</td>
+<td style="text-align: left;">中证1000 指数昨收</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">上交所融资融券</td>
+<td style="text-align: left;">Selenium 动态渲染</td>
+<td style="text-align: left;">融资余额、融资买入额、融券余量、融券卖出量</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">上交所股票成交概况</td>
+<td style="text-align: left;">Selenium 动态渲染</td>
+<td style="text-align: left;">挂牌数、总市值、流通市值、成交额、成交量、市盈率、换手率（含A/B股、科创板细分）</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">上交所基金成交概况</td>
+<td style="text-align: left;">Selenium 动态渲染</td>
+<td style="text-align: left;">基金挂牌数、ETF/REITs/LOF 成交量与成交额</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">上交所债券市场概况</td>
+<td style="text-align: left;">JSONP API</td>
+<td style="text-align: left;">债券只数、面值、市值（合计）</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">上交所债券成交统计</td>
+<td style="text-align: left;">JSONP API</td>
+<td style="text-align: left;">各类型债券当日成交笔数、成交金额</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">上交所债券流动性统计</td>
+<td style="text-align: left;">JSONP API</td>
+<td style="text-align: left;">各类型债券加权平均价格、成交笔数、成交金额</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">关键技术亮点</h3>
+<p><strong>1. 交易日自适应计算</strong></p>
+<p>使用 <code>chinese_calendar</code> 库自动识别工作日，确保程序仅在交易日执行抓取：</p>
+<pre><code class="language-python">def get_last_trading_day(start_date=None):
+    current = start_date or datetime.now().date()
+    for _ in range(7):
+        current -= timedelta(days=1)
+        if is_workday(current):
+            return current.strftime('%Y-%m-%d')
+    return start_date.strftime('%Y-%m-%d')
+</code></pre>
+<p><strong>2. 债券 JSONP 接口解析</strong></p>
+<p>上交所债券接口返回的是 JSONP 格式（<code>jsonpCallback({...})</code>），系统使用正则表达式提取并解析：</p>
+<pre><code class="language-python">raw = resp.text
+match = re.search(r'jsonpCallback\((.*)\)', raw)
+if match:
+    json_str = match.group(1)
+    return json.loads(json_str)
+</code></pre>
+<p><strong>3. Selenium 无头浏览器</strong></p>
+<p>用于抓取需要 JavaScript 渲染的页面，配置为无头模式（不弹出浏览器窗口），适合服务器部署：</p>
+<pre><code class="language-python">options = EdgeOptions()
+options.add_argument('--headless')
+options.add_argument('--window-size=1920,1080')
+</code></pre>
+<h2 id="_6">🔄 阶段二：模板映射（含派生指标计算）</h2>
+<p>抓取的原始数据与业务模板之间存在<strong>字段名称差异</strong>，需要通过映射规则进行转换。</p>
+<h3 id="_7">映射方式</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">映射类型</th>
+<th style="text-align: left;">说明</th>
+<th style="text-align: left;">示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>手动映射表</strong></td>
+<td style="text-align: left;">预定义 <code>模板指标名 → 原始指标名</code> 的对应关系</td>
+<td style="text-align: left;"><code>'上证综合指数:收盘价:日'</code> → <code>'上证指数指数'</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>精确匹配</strong></td>
+<td style="text-align: left;">模板名称与原始名称完全一致</td>
+<td style="text-align: left;">直接取用</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>核心词匹配</strong></td>
+<td style="text-align: left;">去除后缀（<code>:收盘价:日</code>、<code>:上海证券交易所:日</code>）后匹配</td>
+<td style="text-align: left;"><code>'股票挂牌数:上海证券交易所:日'</code> → <code>'股票挂牌数'</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>模糊匹配</strong></td>
+<td style="text-align: left;">双向包含关系匹配</td>
+<td style="text-align: left;">用于处理细微名称差异</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>派生计算</strong></td>
+<td style="text-align: left;">基于多个原始指标计算得出</td>
+<td style="text-align: left;">详见下方</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">派生指标计算</h3>
+<p>以下两个指标无法直接抓取，需通过公式计算：</p>
+<p><strong>融资偿还额</strong>：</p>
+<pre><code>融资偿还额 = 上期融资余额 - 本期融资余额 + 本期融资买入额
+</code></pre>
+<p><strong>融券偿还量</strong>：</p>
+<pre><code>融券偿还量 = 上期融券余量 - 本期融券余量 + 本期融券卖出量
+</code></pre>
+<p>系统自动从原始数据中查找最近两期的融资/融券数据，按公式计算并填充。</p>
+<h2 id="_9">📊 阶段三：数据库比对</h2>
+<h3 id="_10">数据源</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">数据源</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>映射结果 Excel</strong></td>
+<td style="text-align: left;">阶段二生成的映射后数据</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SQL Server（生产库）</strong></td>
+<td style="text-align: left;">包含 <code>usrXHGSJBHG</code>、<code>usrXHGSJBHGMY</code>、<code>usrXHGSJBHYCW</code>、<code>usrXHGSJBQY</code> 四个分表</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_11">比对逻辑</h3>
+<ol>
+<li><strong>按 ZBDM（指标代码）关联</strong>，取数据库中该指标<strong>最新一条记录</strong>（按 JZRQ 降序）</li>
+<li>使用 <strong>CTE（公共表表达式）+ 窗口函数</strong> 进行高效查询</li>
+<li>逐指标比对数值，计算<strong>绝对差异</strong>和<strong>相对差异</strong></li>
+</ol>
+<pre><code class="language-python">sql = &quot;&quot;&quot;
+WITH AllData AS (
+    SELECT XXFBRQ, ZBDM, ZBSJ, JZRQ, XGRY, XGSJ FROM usrXHGSJBHG
+    UNION ALL
+    SELECT XXFBRQ, ZBDM, ZBSJ, JZRQ, XGRY, XGSJ FROM usrXHGSJBHGMY
+    -- ... 更多分表
+),
+Ranked AS (
+    SELECT *, ROW_NUMBER() OVER (PARTITION BY ZBDM ORDER BY JZRQ DESC) AS rn
+    FROM AllData WHERE ZBDM IN ({placeholders})
+)
+SELECT ZBDM, JZRQ, ZBSJ, XXFBRQ, XGSJ FROM Ranked WHERE rn = 1
+&quot;&quot;&quot;
+</code></pre>
+<h3 id="_12">比对状态分类</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">比对状态</th>
+<th style="text-align: left;">判定条件</th>
+<th style="text-align: left;">业务含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>完全一致</strong></td>
+<td style="text-align: left;">绝对差异 = 0</td>
+<td style="text-align: left;">数据完全匹配 ✅</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>基本一致</strong></td>
+<td style="text-align: left;">相对差异 &lt; 0.01%</td>
+<td style="text-align: left;">差异微小，可接受 ✅</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>存在偏差</strong></td>
+<td style="text-align: left;">相对差异 0.01% ~ 1%</td>
+<td style="text-align: left;">需人工核对 ⚠️</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>差异较大</strong></td>
+<td style="text-align: left;">相对差异 ≥ 1%</td>
+<td style="text-align: left;">需重点核查 🔴</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>数据库无数据</strong></td>
+<td style="text-align: left;">数据库无该指标记录</td>
+<td style="text-align: left;">需新增录入 🔴</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_13">📱 阶段四：钉钉智能通知</h2>
+<p>系统集成钉钉机器人，实现<strong>执行结果实时推送</strong>和<strong>异常告警</strong>。</p>
+<h3 id="_14">通知机制</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">通知场景</th>
+<th style="text-align: left;">触发条件</th>
+<th style="text-align: left;">接收人</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">每日正常报告</td>
+<td style="text-align: left;">执行完成，无异常</td>
+<td style="text-align: left;">群内@相关人员</td>
+</tr>
+<tr>
+<td style="text-align: left;">问题告警</td>
+<td style="text-align: left;">存在“差异较大”或“数据库无数据”</td>
+<td style="text-align: left;">@指定人员（18039726681）</td>
+</tr>
+<tr>
+<td style="text-align: left;">程序异常</td>
+<td style="text-align: left;">任何阶段发生异常</td>
+<td style="text-align: left;">@指定人员</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_15">安全模式</h3>
+<p>使用<strong>加签（HMAC-SHA256）</strong>模式，确保 Webhook 请求的安全性：</p>
+<pre><code class="language-python">def _generate_sign(self):
+    timestamp = str(round(time.time() * 1000))
+    secret_enc = self.secret.encode('utf-8')
+    string_to_sign = f'{timestamp}\n{self.secret}'
+    hmac_code = hmac.new(secret_enc, string_to_sign_enc, digestmod=hashlib.sha256).digest()
+    sign = base64.b64encode(hmac_code).decode('utf-8')
+    return timestamp, sign
+</code></pre>
+<h2 id="_16">📈 成果与价值</h2>
+<h3 id="_17">效率提升</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">对比项</th>
+<th style="text-align: center;">人工操作</th>
+<th style="text-align: center;">系统执行</th>
+<th style="text-align: left;">提升幅度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">每日稽核耗时</td>
+<td style="text-align: center;">120-180 分钟</td>
+<td style="text-align: center;"><strong>&lt; 5 分钟</strong></td>
+<td style="text-align: left;"><strong>95%+</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">数据源覆盖</td>
+<td style="text-align: center;">3-4 个</td>
+<td style="text-align: center;"><strong>8 个</strong></td>
+<td style="text-align: left;">覆盖翻倍</td>
+</tr>
+<tr>
+<td style="text-align: left;">人为错误风险</td>
+<td style="text-align: center;">高（疲劳/格式变化）</td>
+<td style="text-align: center;"><strong>极低</strong></td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;">是否支持节假日自动跳过</td>
+<td style="text-align: center;">否</td>
+<td style="text-align: center;"><strong>是</strong></td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;">异常实时告警</td>
+<td style="text-align: center;">否</td>
+<td style="text-align: center;"><strong>钉钉即时推送</strong></td>
+<td style="text-align: left;">—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_18">系统特性</h3>
+<ul>
+<li>✅ <strong>全自动化</strong>：从抓取到通知，全程无人值守</li>
+<li>✅ <strong>多数据源覆盖</strong>：指数、融资融券、股票、基金、债券全市场</li>
+<li>✅ <strong>智能映射</strong>：支持精确/核心/模糊/派生多种匹配方式</li>
+<li>✅ <strong>生产级数据库集成</strong>：CTE + 窗口函数高效查询</li>
+<li>✅ <strong>钉钉实时通知</strong>：执行结果与异常告警即时推送</li>
+<li>✅ <strong>完整日志记录</strong>：每次执行过程保存到日志文件</li>
+<li>✅ <strong>可打包部署</strong>：支持 PyInstaller 打包为独立 .exe</li>
+</ul>
+<h2 id="_19">🔗 关联工具</h2>
+<p>本系统是<strong>数据质量保障体系</strong>中的核心自动化引擎：</p>
+<pre><code class="language-text">[上交所官网] → [本系统：抓取→映射→比对] → [钉钉通知]
+                                    ↓
+                            [比对结果 Excel]
+</code></pre>
+<ul>
+<li>📊 <a href="data-compare-tool.md">宏观数据自动比对工具</a> — 两期 Excel 数据比对</li>
+<li>📊 <a href="data-audit-tool.md">数据完整性核查工具</a> — 按月检查数据连续性</li>
+<li>📊 <a href="code-audit-tool.md">指标代码归集核查工具</a> — 多文件交叉比对</li>
+</ul>
+<h2 id="_20">📂 相关资源</h2>
+<ul>
+<li>📦 完整项目代码：<a href="https://github.com/Pukaria/python-scripts-collection/blob/main/上交所自动化稽核系统.py">GitHub 仓库</a></li>
+</ul>
+<hr />
+<p><em>系统状态：✅ 已投产使用，每日自动执行</em>
+<em>作者：吴代奎（Wudk）</em>
+<em>版本：v1.0</em></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
