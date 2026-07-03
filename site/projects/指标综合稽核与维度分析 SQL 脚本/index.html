@@ -1,0 +1,1885 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="数据分析与自动化工具作品集">
+      
+      
+        <meta name="author" content="吴代奎">
+      
+      
+      
+        <link rel="prev" href="../%E7%8C%AA%E9%B8%A1%E8%9B%8B%E6%96%99%E6%AF%94%E4%BB%B7%E5%91%A8%E6%8A%A5%E6%97%B6%E6%95%88%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/">
+      
+      
+        <link rel="next" href="../%E5%A4%9A%E6%8C%87%E6%A0%87%E7%BB%BC%E5%90%88%E7%A8%BD%E6%A0%B8%20SQL%20%E8%84%9A%E6%9C%AC2/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../material/chart-line">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>指标综合稽核查询 - 吴代奎 - 数据作品集</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sql" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="吴代奎 - 数据作品集" class="md-header__button md-logo" aria-label="吴代奎 - 数据作品集" data-md-component="logo">
+      
+  <img src="../../material/chart-line" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            吴代奎 - 数据作品集
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              指标综合稽核查询
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换至暗色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至暗色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换至亮色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至亮色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="吴代奎 - 数据作品集" class="md-nav__button md-logo" aria-label="吴代奎 - 数据作品集" data-md-component="logo">
+      
+  <img src="../../material/chart-line" alt="logo">
+
+    </a>
+    吴代奎 - 数据作品集
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 可视化作品集
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📄 调研报告
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📄 调研报告
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../files/%E8%80%81%E5%B9%B4%E7%BB%84%E6%95%B0%E6%8D%AE%E7%BB%9F%E5%90%88%E5%88%86%E6%9E%90.pdf" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    老年组数据统合分析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../files/%E6%95%B0%E5%AD%97%E5%8C%96%E8%B5%8B%E8%83%BD%E8%80%81%E5%B9%B4%E5%A4%A7%E5%AD%A6%E5%B8%82%E5%9C%BA%E8%B0%83%E7%A0%94%E5%8F%8A%E5%89%8D%E6%99%AF%E5%88%86%E6%9E%90.pdf" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数字化赋能老年大学市场调研及前景分析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../files/%E9%83%91%E5%B7%9E%E5%A4%9C%E7%BB%8F%E6%B5%8E%E7%BB%BC%E5%90%88%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C%EF%BC%88UX%EF%BC%89%E8%B0%83%E6%9F%A5%E7%A0%94%E7%A9%B6.pdf" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    郑州夜经济综合用户体验（UX）调查研究
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔄 自动化稽核系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔄 自动化稽核系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%B8%8A%E4%BA%A4%E6%89%80%E6%95%B0%E6%8D%AE%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A8%BD%E6%A0%B8%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上交所数据自动化稽核系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%B7%B1%E4%BA%A4%E6%89%80%E6%95%B0%E6%8D%AE%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A8%BD%E6%A0%B8%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    深交所数据自动化稽核系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🛠️ 数据处理工具链
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🛠️ 数据处理工具链
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%AE%8F%E8%A7%82%E6%95%B0%E6%8D%AE%E8%87%AA%E5%8A%A8%E6%AF%94%E5%AF%B9%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    宏观数据自动比对工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%AE%8F%E8%A7%82%E6%95%B0%E6%8D%AE%E6%AF%94%E5%AF%B9%E7%BB%93%E6%9E%9C%E6%99%BA%E8%83%BD%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    宏观数据智能标注工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7%E6%A0%B8%E6%9F%A5%E4%B8%8E%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据完整性核查工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%8C%87%E6%A0%87%E4%BB%A3%E7%A0%81%E5%BD%92%E9%9B%86%E4%B8%8E%E4%BA%A4%E5%8F%89%E6%A0%B8%E6%9F%A5%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    指标代码归集核查工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%9B%BD%E7%BB%9F%E5%B1%80%E6%8C%87%E6%A0%87%E6%98%A0%E5%B0%84%E8%B7%AF%E5%BE%84%E6%AF%94%E5%AF%B9%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    国统局映射比对工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%9B%BD%E7%BB%9F%E5%B1%80%E6%8C%87%E6%A0%87%E5%90%8D%E7%A7%B0%E4%B8%8E%E8%B7%AF%E5%BE%84%E6%B8%85%E6%B4%97%E5%BC%95%E6%93%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    国统局清洗引擎
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⏰ 时效监控系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ⏰ 时效监控系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%95%9C%E4%BA%A7%E5%93%81%E5%91%A8%E6%8A%A5%E6%97%B6%E6%95%88%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    畜产品周报时效监控
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%94%9F%E7%8C%AA%E5%8F%8A%E7%8C%AA%E8%82%89%E4%BB%B7%E6%A0%BC%E5%91%A8%E6%8A%A5%E6%97%B6%E6%95%88%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    生猪周报时效监控
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%8C%AA%E9%B8%A1%E8%9B%8B%E6%96%99%E6%AF%94%E4%BB%B7%E5%91%A8%E6%8A%A5%E6%97%B6%E6%95%88%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    猪鸡蛋料比价周报监控
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗄️ SQL 作品集
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🗄️ SQL 作品集
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    指标综合稽核查询
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    指标综合稽核查询
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 项目背景
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ 技术栈
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 系统整体架构
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📥 核心功能详解
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📥 核心功能详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 指标主表稽核（含 11 项检查）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 维度表（逐行模式）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 维度表（宽表模式）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 树形表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 代码→中文映射（表值构造器）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 输出结构
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📈 成果与价值
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 成果与价值">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        功能特性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        稽核覆盖面
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 关联工具
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📂 相关资源
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%A4%9A%E6%8C%87%E6%A0%87%E7%BB%BC%E5%90%88%E7%A8%BD%E6%A0%B8%20SQL%20%E8%84%9A%E6%9C%AC2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    多指标综合稽核
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 项目背景
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ 技术栈
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 系统整体架构
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📥 核心功能详解
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📥 核心功能详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 指标主表稽核（含 11 项检查）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 维度表（逐行模式）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 维度表（宽表模式）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 树形表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 代码→中文映射（表值构造器）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 输出结构
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📈 成果与价值
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 成果与价值">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        功能特性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        稽核覆盖面
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 关联工具
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📂 相关资源
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="sql">指标综合稽核与维度分析 SQL 脚本</h1>
+<h2 id="_1">📌 项目背景</h2>
+<p>在日常数据运营中，需要对单个指标进行<strong>全方位的质量稽核</strong>，涵盖指标主表信息、维度配置、树形结构、跟踪记录等多个维度。传统做法是手动查询多张表，逐个字段核对，效率低且容易遗漏。</p>
+<p>本脚本实现了<strong>单个指标的综合稽核查询</strong>，一次性输出 5 张表：
+1. <strong>指标主表稽核</strong>：检查指标名称、频率、截止日期、开放状态、数据来源等核心字段
+2. <strong>维度表（逐行）</strong>：展示指标的所有维度配置（统计口径、期间、区域、商品分类等）
+3. <strong>维度表（宽表）</strong>：将维度横向展开，同时关联标准指标名称
+4. <strong>树形表</strong>：展示指标在树形结构中的位置及父节点信息
+5. <strong>跟踪表</strong>：展示录入模板、数据源链接、所属模块等扩展信息</p>
+<h2 id="_2">🛠️ 技术栈</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">类别</th>
+<th style="text-align: left;">工具/技术</th>
+<th style="text-align: left;">用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>数据库</strong></td>
+<td style="text-align: left;">SQL Server</td>
+<td style="text-align: left;">生产环境数据库查询</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>核心语法</strong></td>
+<td style="text-align: left;">CTE（公共表表达式）</td>
+<td style="text-align: left;">多表关联与数据预处理</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>窗口函数</strong></td>
+<td style="text-align: left;">ROW_NUMBER()</td>
+<td style="text-align: left;">按分区取最新/最优先记录</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>表值构造器</strong></td>
+<td style="text-align: left;">VALUES 构造临时映射表</td>
+<td style="text-align: left;">代码→中文名称转换</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>变量表</strong></td>
+<td style="text-align: left;">表变量 <code>@TargetCodes</code></td>
+<td style="text-align: left;">动态传入目标指标代码</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">🧠 系统整体架构</h2>
+<pre class="mermaid"><code>flowchart TD
+    A[输入: 4个指标代码&lt;br&gt;210048571-210048574] --&gt; B{综合稽核查询}
+
+    B --&gt; C[1. 指标主表稽核]
+    B --&gt; D[2. 维度表 逐行]
+    B --&gt; E[3. 维度表 宽表]
+    B --&gt; F[4. 树形表]
+    B --&gt; G[5. 跟踪表]
+
+    C --&gt; C1[usrXHGZBB 主表]
+    C1 --&gt; C2[稽核规则引擎&lt;br&gt;11 项字段检查]
+    C2 --&gt; C3[输出: 稽核结果 + 备注]
+
+    D --&gt; D1[usrHGHYZBWDB 维度表]
+    D1 --&gt; D2[按 WDLBDM 分类&lt;br&gt;统计口径/期间/区域/商品/原子指标]
+    D2 --&gt; D3[逐行展开维度]
+
+    E --&gt; E1[维度透视&lt;br&gt;按类别取最优先记录]
+    E1 --&gt; E2[usrBQHXLSB 标准指标名称]
+    E2 --&gt; E3[输出: 宽表 + 标准名称]
+
+    F --&gt; F1[usrXHGZBSXB 树形表]
+    F1 --&gt; F2[ROW_NUMBER 取最新记录]
+    F2 --&gt; F3[关联父节点名称]
+    F3 --&gt; F4[输出: 树形结构 + 稽核]
+
+    G --&gt; G1[usrEDBZBGZB 跟踪表]
+    G1 --&gt; G2[输出: 模板/链接/状态]</code></pre>
+<h2 id="_4">📥 核心功能详解</h2>
+<h3 id="1-11">1. 指标主表稽核（含 11 项检查）</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">SELECT</span><span class="w"> </span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">t</span><span class="p">.</span><span class="n">ZBDM</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="err">指标代码</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">m</span><span class="p">.</span><span class="n">ZBMC</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="err">指标名称</span><span class="p">,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">m</span><span class="p">.</span><span class="n">ZBPLPL</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="err">披露频率</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="n">m</span><span class="p">.</span><span class="n">JZRQ</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="err">最新截止日期</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="n">m</span><span class="p">.</span><span class="n">SJLY</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="err">数据来源代码</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="n">sm</span><span class="p">.</span><span class="n">SJLY_CN</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="err">数据来源中文</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="c1">-- 稽核结果（11 项检查）</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="k">CASE</span><span class="w"> </span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">ZBDM</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;缺失&#39;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">ZBMC</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">ZBMC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;指标名称为空&#39;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">ZBPLPL</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">365</span><span class="p">,</span><span class="mi">999</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;披露频率不合法&#39;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">JZRQ</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;最新截止日期为空&#39;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">JZRQ</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">GETDATE</span><span class="p">()</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;截止日期为未来&#39;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">KFZT</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;指标已停更&#39;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">KFZT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;待观察&#39;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">SJLY</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">SJLY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;数据来源为空&#39;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">ZBLB</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">ZBLB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;指标类别缺失&#39;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39;正常&#39;</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="err">稽核结果</span>
+</code></pre></div>
+<p><strong>稽核规则说明：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">检查项</th>
+<th style="text-align: left;">规则</th>
+<th style="text-align: left;">异常判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">指标是否存在</td>
+<td style="text-align: left;"><code>ZBDM IS NULL</code></td>
+<td style="text-align: left;">缺失</td>
+</tr>
+<tr>
+<td style="text-align: left;">指标名称</td>
+<td style="text-align: left;"><code>ZBMC IS NULL OR = ''</code></td>
+<td style="text-align: left;">名称为空</td>
+</tr>
+<tr>
+<td style="text-align: left;">披露频率</td>
+<td style="text-align: left;">必须在合法值列表 <code>(1,7,14,10,30,90,180,365,999)</code> 中</td>
+<td style="text-align: left;">频率不合法</td>
+</tr>
+<tr>
+<td style="text-align: left;">截止日期</td>
+<td style="text-align: left;"><code>JZRQ IS NULL</code></td>
+<td style="text-align: left;">日期为空</td>
+</tr>
+<tr>
+<td style="text-align: left;">截止日期时效</td>
+<td style="text-align: left;"><code>JZRQ &gt; GETDATE()</code></td>
+<td style="text-align: left;">日期为未来</td>
+</tr>
+<tr>
+<td style="text-align: left;">开放状态</td>
+<td style="text-align: left;"><code>KFZT IN (2,12)</code></td>
+<td style="text-align: left;">指标已停更</td>
+</tr>
+<tr>
+<td style="text-align: left;">开放状态</td>
+<td style="text-align: left;"><code>KFZT = 5</code></td>
+<td style="text-align: left;">待观察</td>
+</tr>
+<tr>
+<td style="text-align: left;">数据来源</td>
+<td style="text-align: left;"><code>SJLY IS NULL OR = ''</code></td>
+<td style="text-align: left;">来源为空</td>
+</tr>
+<tr>
+<td style="text-align: left;">指标类别</td>
+<td style="text-align: left;"><code>ZBLB IS NULL OR = ''</code></td>
+<td style="text-align: left;">类别缺失</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2">2. 维度表（逐行模式）</h3>
+<p>从维度表 <code>usrHGHYZBWDB</code> 中提取指标的所有维度配置，按行展开：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">WITH</span><span class="w"> </span><span class="n">DimValid</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="n">d</span><span class="p">.</span><span class="n">ZBDM</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="n">d</span><span class="p">.</span><span class="n">WDLBDM</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="n">d</span><span class="p">.</span><span class="n">WDDM</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="n">d</span><span class="p">.</span><span class="n">WDSX</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="k">CASE</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">WDLBDM</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="s1">&#39;11&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;统计口径&#39;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="s1">&#39;12&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;统计期间&#39;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="s1">&#39;13&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;统计区域&#39;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="s1">&#39;52&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;商品分类&#39;</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="s1">&#39;59&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;统计主体&#39;</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="s1">&#39;61&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;原子指标类别&#39;</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="s1">&#39;65&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;拼接顺序类别&#39;</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">            </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39;其他(&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">CAST</span><span class="p">(</span><span class="n">d</span><span class="p">.</span><span class="n">WDLBDM</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;)&#39;</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="err">维度属性</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">usrHGHYZBWDB</span><span class="w"> </span><span class="n">d</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">ZBDM</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">ZBDM</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="o">@</span><span class="n">TargetCodes</span><span class="p">)</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">      </span><span class="k">AND</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">SFYX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="c1">-- 仅取有效维度</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="p">)</span>
+</code></pre></div>
+<h3 id="3">3. 维度表（宽表模式）</h3>
+<p>使用 <code>ROW_NUMBER()</code> 按维度类别分组，取排序最优先的记录，横向展开：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">-- 每个指标每个维度类别取 WDSX 最小的一条</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">Dim11</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">ZBDM</span><span class="p">,</span><span class="w"> </span><span class="n">WDDM</span><span class="p">,</span><span class="w"> </span><span class="n">ROW_NUMBER</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ZBDM</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">WDSX</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">rn</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">usrHGHYZBWDB</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ZBDM</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">ZBDM</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="o">@</span><span class="n">TargetCodes</span><span class="p">)</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">WDLBDM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;11&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">SFYX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1">-- 分别处理 11, 12, 13, 52, 61 五个维度类别</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1">-- 最终输出宽表，同时关联 usrBQHXLSB 获取标准指标名称</span>
+</code></pre></div>
+<p><strong>宽表输出示例：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">指标代码</th>
+<th style="text-align: left;">指标名称</th>
+<th style="text-align: left;">标准指标名称</th>
+<th style="text-align: left;">统计口径</th>
+<th style="text-align: left;">统计期间</th>
+<th style="text-align: left;">统计区域</th>
+<th style="text-align: left;">原子指标类别</th>
+<th style="text-align: left;">商品分类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">210048571</td>
+<td style="text-align: left;">出口数量:当月值</td>
+<td style="text-align: left;">中国出口数量</td>
+<td style="text-align: left;">当期值</td>
+<td style="text-align: left;">月</td>
+<td style="text-align: left;">中国</td>
+<td style="text-align: left;">出口数量</td>
+<td style="text-align: left;">飞机及其他航空器</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4">4. 树形表</h3>
+<p>从树形表 <code>usrXHGZBSXB</code> 中取最新记录，关联父节点信息：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">WITH</span><span class="w"> </span><span class="n">TreeLatest</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">        </span><span class="n">ZBDM</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">        </span><span class="n">ZBMC</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="err">树形指标名称</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="n">ZSMC</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="err">展示名称</span><span class="p">,</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="n">FJDDM</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="err">父节点代码</span><span class="p">,</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="n">ROW_NUMBER</span><span class="p">()</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ZBDM</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">XGSJ</span><span class="w"> </span><span class="k">DESC</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">rn</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">usrXHGZBSXB</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ZBDM</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">ZBDM</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="o">@</span><span class="n">TargetCodes</span><span class="p">)</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">SFYX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="p">)</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="k">SELECT</span><span class="w"> </span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="n">tr</span><span class="p">.</span><span class="err">树形指标名称</span><span class="p">,</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="n">tr</span><span class="p">.</span><span class="err">展示名称</span><span class="p">,</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="n">tr</span><span class="p">.</span><span class="err">父节点代码</span><span class="p">,</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="n">p</span><span class="p">.</span><span class="n">ZBMC</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="err">父节点名称</span><span class="p">,</span><span class="w">  </span><span class="c1">-- 关联父节点名称</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="k">CASE</span><span class="w"> </span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">tr</span><span class="p">.</span><span class="err">父节点代码</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">ZBDM</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;父节点不存在或无效&#39;</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">        </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39;正常&#39;</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="err">稽核结果</span>
+</code></pre></div>
+<h3 id="5">5. 代码→中文映射（表值构造器）</h3>
+<p>使用 <code>VALUES</code> 构造临时映射表，避免硬编码：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">WITH</span><span class="w"> </span><span class="n">SourceMap</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="k">VALUES</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">        </span><span class="p">(</span><span class="s1">&#39;1406&#39;</span><span class="p">,</span><span class="s1">&#39;海关总署&#39;</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;29878&#39;</span><span class="p">,</span><span class="s1">&#39;中央国债登记结算有限公司&#39;</span><span class="p">),</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">        </span><span class="p">(</span><span class="s1">&#39;29672&#39;</span><span class="p">,</span><span class="s1">&#39;美国商务部经济分析局&#39;</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;29801&#39;</span><span class="p">,</span><span class="s1">&#39;中国外汇交易中心&#39;</span><span class="p">),</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">        </span><span class="p">(</span><span class="s1">&#39;30603&#39;</span><span class="p">,</span><span class="s1">&#39;国资委&#39;</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;30609&#39;</span><span class="p">,</span><span class="s1">&#39;财政部&#39;</span><span class="p">),</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">        </span><span class="c1">-- ... 30+ 个数据来源映射</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="n">SJLY_Code</span><span class="p">,</span><span class="w"> </span><span class="n">SJLY_CN</span><span class="p">)</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">)</span>
+</code></pre></div>
+<h2 id="_5">📊 输出结构</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">序号</th>
+<th style="text-align: left;">输出表</th>
+<th style="text-align: left;">用途</th>
+<th style="text-align: left;">关键字段</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">指标主表稽核</td>
+<td style="text-align: left;">核心字段质量检查</td>
+<td style="text-align: left;">稽核结果、备注、修改信息</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">维度表（逐行）</td>
+<td style="text-align: left;">查看全部维度配置</td>
+<td style="text-align: left;">维度属性、维度代码、中文名称</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">维度表（宽表）</td>
+<td style="text-align: left;">横向查看维度组合</td>
+<td style="text-align: left;">统计口径、期间、区域、标准名称</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">树形表</td>
+<td style="text-align: left;">查看树形结构位置</td>
+<td style="text-align: left;">树形名称、展示名称、父节点、叶节点标识</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">跟踪表</td>
+<td style="text-align: left;">查看录入与发布信息</td>
+<td style="text-align: left;">录入模板、数据源链接、公开状态</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_6">📈 成果与价值</h2>
+<h3 id="_7">功能特性</h3>
+<ul>
+<li>✅ <strong>单脚本五表输出</strong>：一次查询覆盖指标的全部关联信息</li>
+<li>✅ <strong>11 项自动稽核规则</strong>：自动识别指标主表的异常数据</li>
+<li>✅ <strong>维度宽表转换</strong>：将多行维度数据横向展开，便于查看</li>
+<li>✅ <strong>父节点递归关联</strong>：树形表中自动关联父节点名称</li>
+<li>✅ <strong>代码映射解耦</strong>：通过 CTE + VALUES 实现代码→中文的动态转换</li>
+<li>✅ <strong>窗口函数精准取数</strong>：<code>ROW_NUMBER()</code> 保证取到最新/最优先记录</li>
+</ul>
+<h3 id="_8">稽核覆盖面</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">稽核对象</th>
+<th style="text-align: center;">检查项数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">指标主表</td>
+<td style="text-align: center;">11 项</td>
+</tr>
+<tr>
+<td style="text-align: left;">树形表</td>
+<td style="text-align: center;">4 项</td>
+</tr>
+<tr>
+<td style="text-align: left;">跟踪表</td>
+<td style="text-align: center;">2 项</td>
+</tr>
+<tr>
+<td style="text-align: left;">维度表</td>
+<td style="text-align: center;">有效性过滤 + 中文映射</td>
+</tr>
+<tr>
+<td style="text-align: left;">父节点关联</td>
+<td style="text-align: center;">存在性校验</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_9">🔗 关联工具</h2>
+<p>本脚本属于<strong>数据稽核体系</strong>中的<strong>单指标综合查询</strong>工具：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[指标代码输入] → [本脚本：五表综合查询] → [稽核报告 + 维度详情 + 树形结构]
+</code></pre></div>
+<ul>
+<li>📊 <a href="../%E4%B8%8A%E4%BA%A4%E6%89%80%E6%95%B0%E6%8D%AE%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A8%BD%E6%A0%B8%E7%B3%BB%E7%BB%9F/">上交所数据自动化稽核系统</a> — 自动化稽核平台</li>
+<li>📊 <a href="../%E5%AE%8F%E8%A7%82%E6%95%B0%E6%8D%AE%E8%87%AA%E5%8A%A8%E6%AF%94%E5%AF%B9%E5%B7%A5%E5%85%B7/">宏观数据自动比对工具</a> — 两期数据比对</li>
+</ul>
+<h2 id="_10">📂 相关资源</h2>
+<ul>
+<li>📦 完整 SQL 脚本：<a href="https://github.com/Pukaria/python-scripts-collection/blob/main/指标综合稽核与维度分析%20SQL%20脚本.sql">GitHub 仓库</a></li>
+</ul>
+<hr />
+<p><em>工具状态：✅ 已投产使用</em>
+<em>适用场景：日常指标质量监控、维度配置核查、树形结构审计</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.sections", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
