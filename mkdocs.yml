@@ -1,6 +1,8 @@
+site_url: https://pukaria.github.io/wudk.github.io/
 site_name: 吴代奎 - 数据作品集
 site_description: 数据分析与自动化工具作品集
 site_author: 吴代奎
+
 
 theme:
   name: material
