@@ -1,1 +1,81 @@
-site_name: My Docs
+site_name: 吴代奎 - 数据作品集
+site_description: 数据分析与自动化工具作品集
+site_author: 吴代奎
+
+theme:
+  name: material
+  language: zh
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换至暗色模式
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换至亮色模式
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - navigation.sections
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+  logo: material/chart-line
+  favicon: material/chart-line
+
+plugins:
+  - search
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+nav:
+  - 🏠 首页: index.md
+
+  - 📊 可视化作品集: projects/可视化作品展示.md
+
+  - 📄 调研报告:
+      - 老年组数据统合分析: files/老年组数据统合分析.pdf
+      - 数字化赋能老年大学市场调研及前景分析: files/数字化赋能老年大学市场调研及前景分析.pdf
+      - 郑州夜经济综合用户体验（UX）调查研究: files/郑州夜经济综合用户体验（UX）调查研究.pdf
+
+  - 🔄 自动化稽核系统:
+      - 上交所数据自动化稽核系统: projects/上交所数据自动化稽核系统.md
+      - 深交所数据自动化稽核系统: projects/深交所数据自动化稽核系统.md
+
+  - 🛠️ 数据处理工具链:
+      - 宏观数据自动比对工具: projects/宏观数据自动比对工具.md
+      - 宏观数据智能标注工具: projects/宏观数据比对结果智能预处理工具.md
+      - 数据完整性核查工具: projects/数据完整性核查与自动补全工具.md
+      - 指标代码归集核查工具: projects/指标代码归集与交叉核查工具.md
+      - 国统局映射比对工具: projects/国统局指标映射路径比对工具.md
+      - 国统局清洗引擎: projects/国统局指标名称与路径清洗引擎.md
+
+  - ⏰ 时效监控系统:
+      - 畜产品周报时效监控: projects/畜产品周报时效监控系统.md
+      - 生猪周报时效监控: projects/生猪及猪肉价格周报时效监控系统.md
+      - 猪鸡蛋料比价周报监控: projects/猪鸡蛋料比价周报时效监控系统.md
+
+  - 🗄️ SQL 作品集:
+      - 指标综合稽核查询: projects/指标综合稽核与维度分析 SQL 脚本.md
+      - 多指标综合稽核: projects/多指标综合稽核 SQL 脚本2.md
