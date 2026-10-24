@@ -81,3 +81,6 @@ nav:
   - 🗄️ SQL 作品集:
       - 指标综合稽核查询: projects/指标综合稽核与维度分析 SQL 脚本.md
       - 多指标综合稽核: projects/多指标综合稽核 SQL 脚本2.md
+      
+  - 📈 量化CTA策略研究与实盘: projects/quantitative-cta.md
+      

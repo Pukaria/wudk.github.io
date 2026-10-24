@@ -1,15 +1,14 @@
 # 👋 你好，我是吴代奎
 
-**数据分析与自动化工程师** | 郑州航空工业管理学院 信息管理与信息系统（2026届）
+**数据自动化工程师 / 量化研究员** 
 
-欢迎来到我的个人作品集，这里记录了我近年来在**数据自动化、数据稽核、可视化分析、市场调研**等领域的主要成果。
+欢迎来到我的个人作品集，这里记录了我近年来在**量化交易、数据自动化、数据稽核、可视化分析**等领域的主要成果。
 
 ---
 
 ## 🚀 关于我
 
-我专注于**金融数据自动化处理**，擅长使用 Python 构建从**数据采集 → 处理分析 → 质量监控**的完整数据流水线。
-曾主导开发上交所/深交所数据自动化稽核系统，以及覆盖农林牧渔三大周报的时效监控体系。
+我专注于**金融数据的自动化处理与量化策略研发**。擅长使用 Python 构建从**数据采集 → 处理分析 → 质量监控 → 策略回测 → 实盘交易**的完整数据与交易流水线。曾主导开发上交所/深交所数据自动化稽核系统，以及覆盖农林牧渔三大周报的时效监控体系；近期深度参与量化CTA策略矩阵研发、量化路演看板搭建及期货实盘交易。
 
 ### 核心能力
 
@@ -20,12 +19,42 @@
 | **数据库** | MySQL、SQL Server（窗口函数 / CTE / UNION ALL / 执行计划优化） |
 | **数据稽核** | 跨系统比对 / 异常自动识别 / 及时性监控（T+N）/ 衍生计算 |
 | **清洗与映射** | 标准化 / 同义词替换 / 模糊匹配（SequenceMatcher）/ 路径关键词匹配 |
+| **量化研究** | **CTA策略研发 / 量化策略回测 / 多因子挖掘 / Dash看板搭建 / 实盘复盘** |
 | **工程化** | 钉钉机器人（加签）/ EXE打包 / Windows任务计划 / 日志管理 / JIRA |
-| **可视化/工具** | PowerBI、Tableau、Pyecharts、Streamlit、SPSS、Git、JIRA |
+| **可视化/工具** | PowerBI、Tableau、Pyecharts、Plotly、Dash、Streamlit、SPSS、Git、JIRA |
 
 ---
 
 ## 🏆 旗舰项目
+
+### 📈 量化CTA策略研究与实盘验证（2026.07 - 至今）
+
+深度参与**8大CTA策略矩阵**研发（涵盖玉米、白糖、铁矿石、焦煤等品种），独立主导**量化路演看板系统**的工程化搭建，并完成从模拟盘到期货实盘交易的完整闭环验证。
+
+- **策略矩阵研发**：设计“反马丁/马丁”资金管理、EMA89角度过滤、多因子ADX趋势跟踪等8类策略，覆盖趋势、反转与回调形态。
+- **看板工程化**：基于 Dash + Plotly 从零搭建暗黑风格路演看板，实现多品种 KPI 实时联动、蒙特卡洛模拟及四象限风险评级。
+- **实盘战绩**：焦煤实盘16天内实现 **13胜1平1负（胜率86.7%）**，唯一亏损仅1跳；精准捕捉 EMA89 角度 68.53° 的极强趋势。
+
+👇 **量化看板与实盘回测展示**
+
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-bottom: 20px;">
+  <div>
+    <img src="/images/quant_research/量化路演看板1.png" alt="量化路演看板" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    <p style="text-align: center; font-size: 13px; color: #666;">基于 Dash + Plotly 搭建的量化路演看板</p>
+  </div>
+  <div>
+    <img src="/images/quant_research/权益-回撤曲线.png" alt="权益回撤曲线" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    <p style="text-align: center; font-size: 13px; color: #666;">策略长周期权益与回撤曲线</p>
+  </div>
+  <div>
+    <img src="/images/quant_research/实盘交易记录1.png" alt="实盘交易记录" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    <p style="text-align: center; font-size: 13px; color: #666;">焦煤实盘开单与交易记录</p>
+  </div>
+</div>
+
+📌 [查看量化CTA策略详细技术与全量图集](./projects/quantitative-cta.md)
+
+---
 
 ### 🔄 双交易所数据自动化稽核系统
 
