@@ -35,23 +35,6 @@
 - **看板工程化**：基于 Dash + Plotly 从零搭建暗黑风格路演看板，实现多品种 KPI 实时联动、蒙特卡洛模拟及四象限风险评级。
 - **实盘战绩**：焦煤实盘16天内实现 **13胜1平1负（胜率86.7%）**，唯一亏损仅1跳；精准捕捉 EMA89 角度 68.53° 的极强趋势。
 
-👇 **量化看板与实盘回测展示**
-
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-bottom: 20px;">
-  <div>
-    <img src="/images/quant_research/量化路演看板1.png" alt="量化路演看板" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-    <p style="text-align: center; font-size: 13px; color: #666;">基于 Dash + Plotly 搭建的量化路演看板</p>
-  </div>
-  <div>
-    <img src="/images/quant_research/权益-回撤曲线.png" alt="权益回撤曲线" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-    <p style="text-align: center; font-size: 13px; color: #666;">策略长周期权益与回撤曲线</p>
-  </div>
-  <div>
-    <img src="/images/quant_research/实盘交易记录1.png" alt="实盘交易记录" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-    <p style="text-align: center; font-size: 13px; color: #666;">焦煤实盘开单与交易记录</p>
-  </div>
-</div>
-
 📌 [查看量化CTA策略详细技术与全量图集](./projects/quantitative-cta.md)
 
 ---

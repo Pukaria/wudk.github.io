@@ -81,6 +81,8 @@ nav:
   - 🗄️ SQL 作品集:
       - 指标综合稽核查询: projects/指标综合稽核与维度分析 SQL 脚本.md
       - 多指标综合稽核: projects/多指标综合稽核 SQL 脚本2.md
-      
-  - 📈 量化CTA策略研究与实盘: projects/quantitative-cta.md
-      
+
+  # 👇 这里是新增的第四个分类：量化策略研究
+  - 📈 量化策略研究:
+      - 策略矩阵与实盘复盘: projects/quantitative-cta.md
+      - 量化图表与看板画廊: projects/quant-gallery.md
